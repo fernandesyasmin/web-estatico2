@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule seu IMC</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        body{
+            width: 600px;
+            font-size: 60px;
+            text-align: center;
+            background-color: blueviolet;
+            color: #3e2e77;
+        }
+        h1{
+            font-size: 60px;
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            margin: 9px;
+            font-size: 20px;
+        }
+        button{
+            width: 100%;
+            margin: 9px;
+            font-size: 20px;
+            background-color: rgb(181, 47, 235);
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    Peso: <br/>
+    <input id="Peso" placeholder="Digite seu peso aqui."  type="number" step="0.01"><br/>
+
+    Altura: <br/>
+    <input id="Altura" placeholder="Digite sua altura aqui."  type="number" step="0.01"><br/>
+    <button onclick="CalcularIMC()">Calcular IMC</button>
+    <p></p>
+    <script>
+        function CalcularIMC(){
+            const Peso = parseFloat(document.getElementById("Peso").value);
+            const Altura = parseFloat(document.getElementById("Altura").value);
+            const IMC = (Peso/(Altura * Altura)).toFixed(1);
+            document.querySelector("p").innerHTML = IMC +'' +classificaçao(IMC) ;
+        }
+        function classificaçao(IMC) {
+            if (IMC < 18.5)
+            return 'Magreza'
+        if (IMC >=18.5 && IMC <=24.9)
+            return 'Normal'
+
+        if (IMC >= 25 && IMC <=29.9)
+            return 'Sobrepeso tipo 1'
+
+        if (IMC >= 30 && IMC<=39.9)
+            return 'Obesidade tipo 2'
+
+            if (IMC >=40)
+            return 'Obesidade tipo 3'
+        }
+    </script>
+</body>
+</html>
