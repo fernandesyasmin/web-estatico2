@@ -1,0 +1,187 @@
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #007BFF;
+    padding: 20px;
+    color: white;
+}
+
+header fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+header .nav label {
+    margin-right: 10px;
+}
+
+header .nav input {
+    margin-right: 10px;
+    padding: 5px;
+    width: 100px;
+}
+
+header button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #218838;
+}
+
+/* Seção principal */
+section {
+    padding: 20px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Formulário */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form fieldset {
+    border: none;
+}
+
+form legend {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+form .label {
+    margin-bottom: 15px;
+}
+
+form .label label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form .label input,
+form .label select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form .botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .botoes button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+form .primario {
+    background-color: #007BFF;
+    color: white;
+}
+
+form .secundario {
+    background-color: #ccc;
+}
+
+form .primario:hover {
+    background-color: #0056b3;
+}
+
+form .secundario:hover {
+    background-color: #888;
+}
+
+/* Tabela de entradas */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+table td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #d9534f;
+    font-size: 1.2em;
+}
+
+table td button:hover {
+    color: #c9302c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav input {
+        width: auto;
+    }
+
+    form .botoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form .botoes button {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
