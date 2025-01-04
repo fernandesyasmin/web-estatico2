@@ -1,6 +1,5 @@
 // Função para carregar os convênios a partir de um objeto JSON
 function carregarConvenios() {
-    // O objeto JSON com os convenios
     const conveniosJSON = {
         "convenios": {
             "D": 0.05,
@@ -8,10 +7,8 @@ function carregarConvenios() {
         }
     };
 
-    // Referência ao optgroup de convenios novos
     const conveniosNovosOptgroup = document.querySelector("optgroup[label='Novos convênios']");
 
-    // Adicionando as novas opções de convenios D e E ao optgroup
     const convenios = conveniosJSON.convenios;
     for (const convenio in convenios) {
         const option = document.createElement("option");
@@ -25,10 +22,9 @@ function carregarConvenios() {
 
 // Registrar entrada
 const btRegistrar = document.getElementById("btRegistrar");
-btRegistrar.addEventListener("click", function(event){ 
+btRegistrar.addEventListener("click", function(event) {
     event.preventDefault();
 
-    // Lendo os campos do formulário
     const tabela = document.getElementById("entradas");
     const entrada = parseInt(document.getElementById("entrada").value);
     const placa = document.getElementById("placa").value;
@@ -36,7 +32,6 @@ btRegistrar.addEventListener("click", function(event){
     const saida = entrada + 1;
     let saidaHTML = "<input type='number' id='inputsaida' value='" + (entrada + 1) + "' min='" + (entrada + 1) + "' max='18' onchange='atualiza(this,this.value)'>";
 
-    // Criando a tabela de resultados
     const novalinha = tabela.insertRow();
     let col1 = novalinha.insertCell().innerHTML = placa;
     let col2 = novalinha.insertCell().innerHTML = entrada;
@@ -71,19 +66,18 @@ function calcTotal(tempo, convenio) {
     let adicional = 0.00;
     let desconto = 0;
 
-    // Verifica o tipo de convênio e aplica o desconto
     if (convenio === "A") {
-        desconto = 0.02; // 2% de desconto
+        desconto = 0.02;
     } else if (convenio === "B") {
-        desconto = 0.03; // 3% de desconto
+        desconto = 0.03;
     } else if (convenio === "C") {
-        desconto = 0.04; // 4% de desconto
+        desconto = 0.04;
     } else if (convenio === "D") {
-        desconto = 0.05; // 5% de desconto (novo convênio)
+        desconto = 0.05;
     } else if (convenio === "E") {
-        desconto = 0.06; // 6% de desconto (novo convênio)
+        desconto = 0.06;
     } else {
-        desconto = 0; // Nenhum desconto
+        desconto = 0;
     }
 
     if (tempo > 1) {
@@ -111,5 +105,8 @@ function atualizarTarifa() {
 // Função de inicialização
 function valida() {
     document.getElementById("tarifa").value = 10;
-    document.getElementById("datatual").value = new Date().toISOString().slice(0, 16); // Ajusta a data atual
+
+    let dataAtual = new Date();
+    let dataFormatada = dataAtual.toISOString().slice(0, 16);
+    document.getElementById("datatual").value = dataFormatada;
 }
