@@ -1,187 +1,114 @@
-/* Reset de margens e paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Corpo da página */
 body {
     font-family: 'Montserrat', sans-serif;
+    padding: 20px;
     background-color: #f4f4f4;
-    color: #333;
 }
 
-/* Header */
 header {
-    background-color: #007BFF;
+    background-color: #005f73;
     padding: 20px;
     color: white;
+    margin-bottom: 20px;
 }
 
 header fieldset {
     border: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .nav {
+.nav {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
-header .nav label {
+.nav label {
     margin-right: 10px;
 }
 
-header .nav input {
-    margin-right: 10px;
-    padding: 5px;
-    width: 100px;
+#tarifa {
+    width: 70px;
+    text-align: center;
 }
 
-header button {
-    padding: 5px 10px;
-    background-color: #28a745;
+#datatual {
+    width: 160px;
+}
+
+button {
+    padding: 10px;
+    background-color: #008CBA;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 14px;
 }
 
-header button:hover {
-    background-color: #218838;
-}
-
-/* Seção principal */
-section {
-    padding: 20px;
+button:hover {
+    background-color: #005f73;
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 900px;
-}
-
-/* Formulário */
-form {
-    background-color: white;
+    margin-top: 20px;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 form fieldset {
     border: none;
 }
 
-form legend {
-    font-size: 1.5em;
+.label {
     margin-bottom: 10px;
 }
 
-form .label {
-    margin-bottom: 15px;
-}
-
-form .label label {
-    display: block;
+label {
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
-form .label input,
-form .label select {
+input, select {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    margin-top: 5px;
     border-radius: 4px;
+    border: 1px solid #ddd;
 }
 
-form .botoes {
-    display: flex;
-    justify-content: space-between;
+input[type="number"] {
+    width: 70px;
 }
 
-form .botoes button {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-}
-
-form .primario {
-    background-color: #007BFF;
-    color: white;
-}
-
-form .secundario {
-    background-color: #ccc;
-}
-
-form .primario:hover {
-    background-color: #0056b3;
-}
-
-form .secundario:hover {
-    background-color: #888;
-}
-
-/* Tabela de entradas */
 table {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-table th, table td {
-    padding: 10px;
+table, th, td {
     border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
     text-align: center;
 }
 
-table th {
-    background-color: #f8f9fa;
-    font-weight: bold;
-}
-
-table td button {
+button.icone {
     background: none;
     border: none;
+    color: red;
+    font-size: 16px;
     cursor: pointer;
-    color: #d9534f;
-    font-size: 1.2em;
 }
 
-table td button:hover {
-    color: #c9302c;
+button.icone:hover {
+    color: darkred;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav input {
-        width: auto;
-    }
-
-    form .botoes {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    form .botoes button {
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    table th, table td {
-        font-size: 0.9em;
-        padding: 8px;
-    }
+.botoes {
+    display: flex;
+    justify-content: space-between;
 }
